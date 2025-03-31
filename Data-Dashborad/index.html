@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Data Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1> Data Dashboard</h1>
+    <div class="dashboard">
+        <!-- Live Tickets -->
+        <div class="widget" id="live-tickets">
+            <h3>Live Tickets</h3>
+            <div class="numbers">
+                <p><span id="tickets-open">23</span> Open</p>
+                <p><span id="tickets-unassigned">13</span> Unassigned</p>
+                <p><span id="tickets-unassigned">20</span> Used Tickets</p>
+                <p><span id="tickets-unassigned">18</span> UnUsed Tickets</p>
+            </div>
+        </div>
+
+        <!-- Response Time -->
+        <div class="widget" id="response-time">
+            <h3>Response Time</h3>
+            <p><span id="frt">80 %</span> Min FRT</p>
+            <p><span id="sla">95 %</span> Within SLA</p>
+            <p><span id="sla">60 %</span> Active SLA</p>
+            <p><span id="sla">55 %</span> Lower Connects SLA</p>
+        </div>
+
+        <!-- CSAT -->
+        <div class="widget" id="csat">
+            <h3>CSAT</h3>
+            <p><span id="csat-percentage">88%</span> Today</p>
+            <canvas id="csatChart"></canvas>
+        </div>
+
+        <!-- Top Ticket Solvers -->
+        <div class="widget" id="top-ticket-solvers">
+            <h3>Top Ticket Solvers</h3>
+            <ul>
+                <li>Arnold Saka - 69</li>
+                <li>Phil Mead - 62</li>
+                <li>Julia Smith - 57</li>
+                <li>Alice Kershaw - 48</li>
+                <li>Marlon Grey - 46</li>
+                <li>Viv Merson - 44</li>
+            </ul>
+        </div>
+
+        <!-- Tickets vs Closed -->
+        <div class="widget" id="new-vs-closed">
+            <h3>New Tickets vs Closed</h3>
+            <canvas id="ticketsChart"></canvas>
+        </div>
+
+        <!-- Recent Ratings -->
+        <div class="widget" id="recent-ratings">
+            <h3>Recent R atings</h3>
+            <ul>
+                <li><span>★★★★★★★</span> - Excellent(20 Aug)</li>
+                <li><span>★★★</span> - Frustrating (29 Aug)</li>
+                <li><span>★★★★</span> - Better (1 Sep)</li>
+                <li><span>★★★</span> - Good (6 Sep)</li>
+                <li><span>★★</span> - Low (8 Sep)</li>
+            </ul>
+        </div>
+
+        <!-- Agent Status -->
+        <div class="widget" id="agent-status">
+            <h3>Agent Status</h3>
+            <ul>
+                <li>Alice Kershaw - Offline</li>
+                <li>Arnold Saka - Away</li>
+                <li>Dean Sherwood - Taking call</li>
+                <li>Dido Martin - Online</li>
+                <li>Roy Goode - Away</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
