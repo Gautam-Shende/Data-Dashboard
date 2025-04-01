@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-chart-pie"></i>
+                <span>AnalyticsPro</span>
+            </div>
+            <ul class="menu">
+                <li class="active">
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-users"></i>
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-box-open"></i>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                <div class="user-info">
+                    <span class="name">Sarah Johnson</span>
+                    <span class="role">Admin</span>
+                </div>
+                <i class="fas fa-sign-out-alt"></i>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Nav -->
+            <div class="top-nav">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="messages">
+                    <i class="fas fa-envelope"></i>
+                    <span class="badge">5</span>
+                </div>
+                <div class="user">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="content">
+                <h1>Dashboard Overview</h1>
+                
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="card">
+                        <div class="card-icon bg-purple">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>$24,560</h3>
+                            <p>Total Revenue</p>
+                        </div>
+                        <div class="card-progress up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>12.5%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon bg-blue">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>1,245</h3>
+                            <p>New Customers</p>
+                        </div>
+                        <div class="card-progress up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>8.3%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon bg-orange">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>568</h3>
+                            <p>Total Orders</p>
+                        </div>
+                        <div class="card-progress down">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>3.2%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon bg-green">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>78.9%</h3>
+                            <p>Conversion Rate</p>
+                        </div>
+                        <div class="card-progress up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>5.7%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Charts Row -->
+                <div class="charts-row">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Revenue Overview</h3>
+                            <div class="chart-actions">
+                                <button class="active">Week</button>
+                                <button>Month</button>
+                                <button>Year</button>
+                            </div>
+                        </div>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Sales by Category</h3>
+                            <div class="chart-actions">
+                                <button class="active">2023</button>
+                                <button>2022</button>
+                            </div>
+                        </div>
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Bottom Row -->
+                <div class="bottom-row">
+                    <div class="recent-orders">
+                        <div class="table-header">
+                            <h3>Recent Orders</h3>
+                            <button>View All</button>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-7841</td>
+                                    <td>John Smith</td>
+                                    <td>12 May 2023</td>
+                                    <td>$245.00</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td><i class="fas fa-ellipsis-v"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-7840</td>
+                                    <td>Sarah Johnson</td>
+                                    <td>11 May 2023</td>
+                                    <td>$189.50</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td><i class="fas fa-ellipsis-v"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-7839</td>
+                                    <td>Michael Brown</td>
+                                    <td>10 May 2023</td>
+                                    <td>$320.75</td>
+                                    <td><span class="status processing">Processing</span></td>
+                                    <td><i class="fas fa-ellipsis-v"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-7838</td>
+                                    <td>Emily Davis</td>
+                                    <td>9 May 2023</td>
+                                    <td>$145.99</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td><i class="fas fa-ellipsis-v"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-7837</td>
+                                    <td>Robert Wilson</td>
+                                    <td>8 May 2023</td>
+                                    <td>$275.00</td>
+                                    <td><span class="status cancelled">Cancelled</span></td>
+                                    <td><i class="fas fa-ellipsis-v"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="top-products">
+                        <div class="table-header">
+                            <h3>Top Products</h3>
+                            <button>View All</button>
+                        </div>
+                        <div class="products-list">
+                            <div class="product-item">
+                                <img src="https://via.placeholder.com/40" alt="Product">
+                                <div class="product-info">
+                                    <h4>Wireless Headphones</h4>
+                                    <p>Electronics</p>
+                                </div>
+                                <div class="product-stats">
+                                    <span class="sales">245 sales</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <img src="https://via.placeholder.com/40" alt="Product">
+                                <div class="product-info">
+                                    <h4>Smart Watch</h4>
+                                    <p>Electronics</p>
+                                </div>
+                                <div class="product-stats">
+                                    <span class="sales">189 sales</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 60%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <img src="https://via.placeholder.com/40" alt="Product">
+                                <div class="product-info">
+                                    <h4>Running Shoes</h4>
+                                    <p>Sports</p>
+                                </div>
+                                <div class="product-stats">
+                                    <span class="sales">156 sales</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 50%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <img src="https://via.placeholder.com/40" alt="Product">
+                                <div class="product-info">
+                                    <h4>Backpack</h4>
+                                    <p>Fashion</p>
+                                </div>
+                                <div class="product-stats">
+                                    <span class="sales">132 sales</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 45%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <img src="https://via.placeholder.com/40" alt="Product">
+                                <div class="product-info">
+                                    <h4>Bluetooth Speaker</h4>
+                                    <p>Electronics</p>
+                                </div>
+                                <div class="product-stats">
+                                    <span class="sales">120 sales</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 40%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
